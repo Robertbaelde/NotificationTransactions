@@ -1,8 +1,6 @@
 <?php
 
-
 namespace RobertBaelde\NotificationTransactions\Tests\Stubs;
-
 
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;

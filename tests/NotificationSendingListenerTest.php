@@ -1,10 +1,9 @@
 <?php
 
-
 namespace RobertBaelde\NotificationTransactions\Tests;
 
-use Orchestra\Testbench\TestCase;
 use Illuminate\Notifications\Events\NotificationSending;
+use Orchestra\Testbench\TestCase;
 use RobertBaelde\NotificationTransactions\NotificationSendingListener;
 use RobertBaelde\NotificationTransactions\NotificationTransaction;
 use RobertBaelde\NotificationTransactions\Tests\Stubs\StubNotification;
@@ -31,8 +30,6 @@ class NotificationSendingListenerTest extends TestCase
         $transaction = resolve(NotificationTransaction::class);
         $transaction->start();
 
-
-
         $listener = new NotificationSendingListener($transaction);
         $result = $listener->handle(new NotificationSending(
             new UserStub(),
@@ -42,5 +39,4 @@ class NotificationSendingListenerTest extends TestCase
 
         $this->assertFalse($result);
     }
-
 }

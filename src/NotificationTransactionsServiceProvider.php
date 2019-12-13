@@ -18,7 +18,6 @@ class NotificationTransactionsServiceProvider extends ServiceProvider
             NotificationSending::class,
             NotificationSendingListener::class
         );
-
     }
 
     /**
@@ -36,7 +35,5 @@ class NotificationTransactionsServiceProvider extends ServiceProvider
                 resolve(ChannelManager::class)
             );
         });
-
-
     }
 }

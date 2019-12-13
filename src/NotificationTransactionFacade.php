@@ -9,7 +9,6 @@ use Illuminate\Support\Facades\Facade;
  */
 class NotificationTransactionFacade extends Facade
 {
-
     protected static function getFacadeAccessor(): string
     {
         return 'notificationtransaction';
