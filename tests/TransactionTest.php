@@ -24,7 +24,7 @@ class TransactionTest extends TestCase
 
         $this->assertFalse($transacton->isActive());
     }
-    
+
     /** @test */
     public function it_sends_all_notifications_on_commit()
     {
@@ -38,6 +38,6 @@ class TransactionTest extends TestCase
         );
 
         $transaction->commit();
-        $this->markTestIncomplete("add assertion");
+        $this->markTestIncomplete('add assertion');
     }
 }
