@@ -1,0 +1,54 @@
+{
+    "name": "robertbaelde/notificationtransactions",
+    "description": "Ability to wait with sending notifications until a specific action completes",
+    "keywords": [
+        "robertbaelde",
+        "notificationtransactions"
+    ],
+    "homepage": "https://github.com/robertbaelde/notificationtransactions",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "RobertBaelde",
+            "email": "robert@baelde.nl",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "*",
+        "phpunit/phpunit": "^7.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "RobertBaelde\\NotificationTransactions\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "RobertBaelde\\NotificationTransactions\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "RobertBaelde\\NotificationTransactions\\NotificationTransactionsServiceProvider"
+            ],
+            "aliases": {
+                "NotificationTransaction": "RobertBaelde\\NotificationTransactions\\NotificationTransactionFacade"
+            }
+        }
+    }
+}
