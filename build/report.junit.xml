@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="Test Suite" tests="4" assertions="5" errors="0" failures="0" skipped="1" time="0.170618">
-    <testsuite name="RobertBaelde\NotificationTransactions\Tests\NotificationSendingListenerTest" file="/Users/robertbaelde/code/NotificationTransactions/tests/NotificationSendingListenerTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.126494">
-      <testcase name="the_listener_returns_null_when_transaction_is_not_active" class="RobertBaelde\NotificationTransactions\Tests\NotificationSendingListenerTest" classname="RobertBaelde.NotificationTransactions.Tests.NotificationSendingListenerTest" file="/Users/robertbaelde/code/NotificationTransactions/tests/NotificationSendingListenerTest.php" line="16" assertions="1" time="0.122699"/>
-      <testcase name="the_listener_returns_false_when_transaction_is_active" class="RobertBaelde\NotificationTransactions\Tests\NotificationSendingListenerTest" classname="RobertBaelde.NotificationTransactions.Tests.NotificationSendingListenerTest" file="/Users/robertbaelde/code/NotificationTransactions/tests/NotificationSendingListenerTest.php" line="29" assertions="1" time="0.003795"/>
+  <testsuite name="Test Suite" tests="5" assertions="7" errors="0" failures="0" skipped="1" time="0.073843">
+    <testsuite name="RobertBaelde\NotificationTransactions\Tests\NotificationSendingListenerTest" file="/Users/robertbaelde/code/NotificationTransactions/tests/NotificationSendingListenerTest.php" tests="2" assertions="2" errors="0" failures="0" skipped="0" time="0.053018">
+      <testcase name="the_listener_returns_null_when_transaction_is_not_active" class="RobertBaelde\NotificationTransactions\Tests\NotificationSendingListenerTest" classname="RobertBaelde.NotificationTransactions.Tests.NotificationSendingListenerTest" file="/Users/robertbaelde/code/NotificationTransactions/tests/NotificationSendingListenerTest.php" line="15" assertions="1" time="0.050023"/>
+      <testcase name="the_listener_returns_false_when_transaction_is_active" class="RobertBaelde\NotificationTransactions\Tests\NotificationSendingListenerTest" classname="RobertBaelde.NotificationTransactions.Tests.NotificationSendingListenerTest" file="/Users/robertbaelde/code/NotificationTransactions/tests/NotificationSendingListenerTest.php" line="28" assertions="1" time="0.002995"/>
     </testsuite>
-    <testsuite name="RobertBaelde\NotificationTransactions\Tests\TransactionTest" file="/Users/robertbaelde/code/NotificationTransactions/tests/TransactionTest.php" tests="2" assertions="3" errors="0" failures="0" skipped="1" time="0.044124">
-      <testcase name="a_transaction_can_be_started" class="RobertBaelde\NotificationTransactions\Tests\TransactionTest" classname="RobertBaelde.NotificationTransactions.Tests.TransactionTest" file="/Users/robertbaelde/code/NotificationTransactions/tests/TransactionTest.php" line="14" assertions="3" time="0.003533"/>
-      <testcase name="it_sends_all_notifications_on_commit" class="RobertBaelde\NotificationTransactions\Tests\TransactionTest" classname="RobertBaelde.NotificationTransactions.Tests.TransactionTest" file="/Users/robertbaelde/code/NotificationTransactions/tests/TransactionTest.php" line="29" assertions="0" time="0.040591">
+    <testsuite name="RobertBaelde\NotificationTransactions\Tests\TransactionTest" file="/Users/robertbaelde/code/NotificationTransactions/tests/TransactionTest.php" tests="3" assertions="5" errors="0" failures="0" skipped="1" time="0.020825">
+      <testcase name="a_transaction_can_be_started" class="RobertBaelde\NotificationTransactions\Tests\TransactionTest" classname="RobertBaelde.NotificationTransactions.Tests.TransactionTest" file="/Users/robertbaelde/code/NotificationTransactions/tests/TransactionTest.php" line="15" assertions="3" time="0.002715"/>
+      <testcase name="it_sends_all_notifications_on_commit" class="RobertBaelde\NotificationTransactions\Tests\TransactionTest" classname="RobertBaelde.NotificationTransactions.Tests.TransactionTest" file="/Users/robertbaelde/code/NotificationTransactions/tests/TransactionTest.php" line="30" assertions="0" time="0.013989">
         <skipped/>
       </testcase>
+      <testcase name="transactions_can_be_rolled_back" class="RobertBaelde\NotificationTransactions\Tests\TransactionTest" classname="RobertBaelde.NotificationTransactions.Tests.TransactionTest" file="/Users/robertbaelde/code/NotificationTransactions/tests/TransactionTest.php" line="46" assertions="2" time="0.004121"/>
     </testsuite>
   </testsuite>
 </testsuites>

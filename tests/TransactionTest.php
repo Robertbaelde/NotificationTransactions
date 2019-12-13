@@ -40,4 +40,23 @@ class TransactionTest extends TestCase
         $transaction->commit();
         $this->markTestIncomplete('add assertion');
     }
+
+    /** @test */
+    public function transactions_can_be_rolled_back()
+    {
+        $transaction = resolve(NotificationTransaction::class);
+        $transaction->addNotification(
+            new NotificationSending(
+                new UserStub(),
+                new StubNotification(),
+                'mail'
+            )
+        );
+
+        $this->assertCount(1, $transaction->getPendingNotifications());
+
+        $transaction->rollBack();
+
+        $this->assertCount(0, $transaction->getPendingNotifications());
+    }
 }

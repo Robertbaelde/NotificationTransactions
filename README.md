@@ -1,11 +1,11 @@
-# Very short description of the package
+# Transactions for Laravel Notifications
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/robertbaelde/notificationtransactions.svg?style=flat-square)](https://packagist.org/packages/robertbaelde/notificationtransactions)
 [![Build Status](https://img.shields.io/travis/robertbaelde/notificationtransactions/master.svg?style=flat-square)](https://travis-ci.org/robertbaelde/notificationtransactions)
-[![Quality Score](https://img.shields.io/scrutinizer/g/robertbaelde/notificationtransactions.svg?style=flat-square)](https://scrutinizer-ci.com/g/robertbaelde/notificationtransactions)
+[![Quality Score](https://github.styleci.io/repos/227851567/shield)](https://github.styleci.io/repos/227851567/shield)
 [![Total Downloads](https://img.shields.io/packagist/dt/robertbaelde/notificationtransactions.svg?style=flat-square)](https://packagist.org/packages/robertbaelde/notificationtransactions)
 
-This is where your description should go. Try and limit it to a paragraph or two, and maybe throw in a mention of what PSRs you support to avoid any confusion with users and contributors.
+This package holds off the sending of notifications until the transactions is commit. This is usefull if you trigger notifications inside a database transaction for example.   
 
 ## Installation
 
@@ -18,7 +18,23 @@ composer require robertbaelde/notificationtransactions
 ## Usage
 
 ``` php
-// Usage description here
+ // Start a transaction 
+ NotificationTransaction::start();
+ 
+ // Trigger your notifications as usual 
+ $user->notify(new ImportantNotification());
+ 
+ // commit the notifications when you want to send them
+ \NotificationTransaction::commit();
+ 
+  // rollback the notifications when something failed and notifications must not be send. 
+  \NotificationTransaction::rollback();
+ 
+ // You can also use DI instead of the Facade. 
+ $notificationTransaction = resolve(NotificationTransaction::class);
+ $notificationTransaction->start();
+
+
 ```
 
 ### Testing
