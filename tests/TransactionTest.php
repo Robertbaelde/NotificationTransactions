@@ -3,7 +3,6 @@
 namespace RobertBaelde\NotificationTransactions\Tests;
 
 use Illuminate\Notifications\Events\NotificationSending;
-use Illuminate\Support\Facades\Notification;
 use Orchestra\Testbench\TestCase;
 use RobertBaelde\NotificationTransactions\NotificationTransaction;
 use RobertBaelde\NotificationTransactions\Tests\Stubs\StubNotification;
@@ -45,7 +44,6 @@ class TransactionTest extends TestCase
     /** @test */
     public function transactions_can_be_rolled_back()
     {
-
         $transaction = resolve(NotificationTransaction::class);
         $transaction->addNotification(
             new NotificationSending(
@@ -60,6 +58,5 @@ class TransactionTest extends TestCase
         $transaction->rollBack();
 
         $this->assertCount(0, $transaction->getPendingNotifications());
-
     }
 }
