@@ -48,4 +48,10 @@ class NotificationTransaction
             $this->manager->sendNow($notificationEvent->notifiable, $notificationEvent->notification, [$notificationEvent->channel]);
         });
     }
+
+    public function rollback(): void
+    {
+        $this->active = false;
+        $this->notificationEvents = collect([]);
+    }
 }
