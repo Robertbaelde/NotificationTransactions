@@ -40,13 +40,24 @@ class NotificationTransaction
         return $this->notificationEvents;
     }
 
-    public function commit(): void
+    public function commit($toQueue = false): void
     {
         $this->active = false;
 
-        $this->notificationEvents->each(function (NotificationSending $notificationEvent) {
+        $this->notificationEvents->each(function (NotificationSending $notificationEvent) use ($toQueue) {
+            if ($toQueue) {
+                dispatch(function() use ($notificationEvent) {
+                    $this->manager->sendNow($notificationEvent->notifiable, $notificationEvent->notification, [$notificationEvent->channel]);
+                });
+                return;
+            }
             $this->manager->sendNow($notificationEvent->notifiable, $notificationEvent->notification, [$notificationEvent->channel]);
         });
+    }
+
+    public function commitToQueue(): void
+    {
+        $this->commit(true);
     }
 
     public function rollback(): void
