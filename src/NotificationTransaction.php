@@ -46,7 +46,7 @@ class NotificationTransaction
 
         $this->notificationEvents->each(function (NotificationSending $notificationEvent) use ($toQueue) {
             if ($toQueue) {
-                dispatch(function() use ($notificationEvent) {
+                dispatch(function () use ($notificationEvent) {
                     $this->manager->sendNow($notificationEvent->notifiable, $notificationEvent->notification, [$notificationEvent->channel]);
                 });
                 return;
